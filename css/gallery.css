@@ -1,0 +1,413 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.nav a,
+.phone {
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+/* Цвета при наведении */
+.hover-red:hover {
+    color: red !important;
+}
+
+.hover-orange:hover {
+    color: orange !important;
+}
+
+.hover-yellow:hover {
+    color: #ffd000 !important;
+}
+
+.hover-green:hover {
+    color: green !important;
+}
+
+.hover-blue:hover {
+    color: blue !important;
+}
+
+.hover-purple:hover {
+    color: purple !important;
+}
+
+body {
+    background: #f5f1e8;
+    font-family: Arial, sans-serif;
+    color: #111;
+    background-color: #83FFC5;
+}
+
+
+/* ШАПКА */
+
+.header {
+    width: 100%;
+    height: 85px;
+    background: #73bd50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 55px;
+}
+
+.logo {
+    width: 215px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.nav {
+    display: flex;
+    gap: 48px;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.nav a {
+    color: #111;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: #1f7f21;
+}
+
+.phone {
+    font-size: 18px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+/* ОСНОВНАЯ ЧАСТЬ */
+
+.main {
+    padding: 24px 45px 28px;
+    min-height: 650px;
+}
+
+.title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 24px;
+}
+
+.gallery-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+}
+
+.photo-box {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.arrow {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border: 1px solid #078b25;
+    border-radius: 50%;
+    background: white;
+    color: #078b25;
+    font-size: 34px;
+    line-height: 34px;
+    cursor: pointer;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.arrow-left {
+    left: -70px;
+}
+
+.arrow-right {
+    right: -70px;
+}
+
+.arrow:hover {
+    color: #1f7f21;
+}
+
+.counter {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 900;
+    color: #1f7f21;
+}
+
+.photo-name {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+/* МИНИ-ФОТО */
+
+.thumbs {
+    width: 100%;
+    max-width: 665px;
+    margin: 24px auto 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+
+.thumbs img {
+    width: 85px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.thumbs img.active {
+    border-color: #1f7f21;
+}
+
+/* ПОДВАЛ */
+
+.footer {
+    width: 100%;
+    height: 78px;
+    background: #73bd50;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 0 55px;
+    font-size: 14px;
+    font-weight: 700;   
+}
+
+.footer p {
+    line-height: 1.45;
+}
+
+.social {
+    text-align: center;
+}
+
+.social-icons {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.social-icons span {
+    width: 22px;
+    height: 22px;
+    color: #138c2c;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+
+
+
+.work {
+    text-align: right;
+}
+
+
+
+/* Плавность для всех интерактивных элементов */
+.nav a,
+.phone,
+.arrow,
+.thumb,
+.main-photo {
+    transition: 0.25s ease;
+}
+
+/* Меню в шапке */
+.nav a:hover {
+    transform: scale(1.08);
+    color: #0b7c22;
+}
+
+/* Телефон */
+.phone:hover {
+    transform: scale(1.08);
+    color: purple;
+}
+
+/* Стрелочки галереи */
+.arrow {
+    cursor: pointer;
+}
+
+.arrow:hover {
+    transform: scale(1.25);
+    color: #020502;
+}
+
+/* Главное фото */
+.main-photo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Мини-фото снизу */
+.thumb {
+    cursor: pointer;
+}
+
+.thumb:hover {
+    transform: scale(1.12);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+    .header{
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .nav{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .gallery-wrapper{
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .thumbs{
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
+    .arrow-left{
+        left: -35px;
+    }
+
+    .arrow-right{
+        right: -35px;
+    }
+
+    .footer{
+        height: auto;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .work{
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .page {
+        padding: 0 10px;
+    }
+
+    .header{
+        padding: 15px;
+    }
+
+    .nav{
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .title{
+        font-size: 22px;
+    }
+
+    .main{
+        padding: 20px 10px;
+    }
+
+    .gallery-wrapper{
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .thumbs{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .thumbs img{
+        width: 100%;
+        height: auto;
+    }
+
+    .arrow{
+        font-size: 30px;
+    }
+
+    .arrow-left{
+        left: 20px;
+    }
+
+    .arrow-right{
+        right: 20px;
+    }
+
+    .counter,
+    .photo-name{
+        font-size: 14px;
+    }
+
+    .footer{
+        grid-template-columns: 1fr;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .work{
+        text-align: center;
+    }
+
+    .phone{
+        font-size: 13px;
+    }            
+}
