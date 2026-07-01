@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея наших гостей</title>
+    <link rel="stylesheet" href="css/gallery.css">
+
+
+</head>
+
+<body>
+
+<!--ШАПКА САЙТА-->
+<div class="page">
+    <header class="header">
+        <div class="logo">
+            <img src="image/Главная страница/Логотип.png" alt="Логотип" height="60px">
+        </div>
+
+        <nav class="nav gallery-nav">
+            <a class="hover-red" href="Index.html">Главная</a>
+            <a class="hover-orange" href="Index.html#zones">Зоны парка</a>
+            <a class="hover-yellow" href="map.html">Карта парка</a>
+            <a class="hover-green" href="reviews.html">Отзывы</a>
+            <a class="hover-blue" href="#footer">Контакты</a>
+        </nav>
+
+        <div class="phone hover-purple">☎ +7 (999) 123-45-67</div>
+    </header>
+
+<!--ФОТО ГОСТЕЙ-->
+    <main class="main">
+        <h1 class="title">Галерея наших гостей</h1>
+
+        <section class="gallery-wrapper">
+            <button class="arrow arrow-left" onclick="prevPhoto()">‹</button>
+
+            <div class="photo-box">
+                <img id="mainPhoto" src="" alt="Фото гостя">
+            </div>
+
+            <button class="arrow arrow-right" onclick="nextPhoto()">›</button>
+        </section>
+
+        <div class="counter" id="counter">1 / 15</div>
+        <div class="photo-name" id="photoName">Белый кролик</div>
+
+        <section class="thumbs" id="thumbs"></section>
+    </main>
+
+<!--ПОДВАЛ-->  
+    <footer class="footer" id="footer">
+        <div>
+            <p> <img src="image/Контакты/Адрес.png" alt="Адрес" height="15px"> г. Москва, ул. Лапкина, 10</p>
+            <p> <img src="image/Контакты/Номер.png" alt="Номер" height="15px"> +7 (999) 123-45-67</p>
+            <p> <img src="image/Контакты/Почта.png" alt="Почта" height="15px"> ✉ info@petpark.ru</p>
+        </div>
+
+        <div class="social">
+            <p>Мы в соцсетях</p>
+            <div class="social-icons">
+                <span> <img src="image/Контакты/Вк.png" alt="Вк" height="25px"></span>
+                <span> <img src="image/Контакты/Телеграм.png" alt="Телеграм" height="25px"></span>
+                <span> <img src="image/Контакты/Инстаграм.png" alt="Инстаграм" height="30px"></span>
+            </div>
+        </div>
+
+        <div class="work">
+            <p> <img src="image/Контакты/часики.png" alt="часики" height="20px"> Режим работы</p>
+            <p>Ежедневно</p>
+            <p>10:00 - 20:00</p>
+        </div>
+    </footer>
+</div>
+
+<!--JAVA SCRIPT-->
+<script>
+    const photos = [
+        {
+            src: "image/Галерея наших гостей/Белый кролик.png",
+            name: "Белый кролик"
+        },
+        {
+            src: "image/Галерея наших гостей/Доберман.png",
+            name: "Доберман"
+        },
+        {
+            src: "image/Галерея наших гостей/Кане-корсо.png",
+            name: "Кане-корсо"
+        },
+        {
+            src: "image/Галерея наших гостей/Корги1.png",
+            name: "Корги"
+        },
+        {
+            src: "image/Галерея наших гостей/Корги2.png",
+            name: "Корги"
+        },
+        {
+            src: "image/Галерея наших гостей/Кошечка1.png",
+            name: "Кошечка"
+        },
+        {
+            src: "image/Галерея наших гостей/Кошки2.png",
+            name: "Кошечка"
+        },
+        {
+            src: "image/Галерея наших гостей/Морская свинка.png",
+            name: "Морская свинка"
+        },
+        {
+            src: "image/Галерея наших гостей/Попугайчики.png",
+            name: "Попугайчики"
+        },
+        {
+            src: "image/Галерея наших гостей/Ретривер1.png",
+            name: "Ретривер"
+        },
+        {
+            src: "image/Галерея наших гостей/Ретривер2.png",
+            name: "Ретривер"
+        },
+        {
+            src: "image/Галерея наших гостей/Ретривер3.png",
+            name: "Ретривер"
+        },
+        {
+            src: "image/Галерея наших гостей/Серый кролик.png",
+            name: "Кролик"
+        },
+        {
+            src: "image/Галерея наших гостей/Сфинкс.png",
+            name: "Сфинкс"
+        },
+        {
+            src: "image/Галерея наших гостей/Щеночек.png",
+            name: "Бэбик"
+        }
+    ];
+
+    let currentPhoto = 0;
+
+    function createThumbs() {
+        const thumbsBlock = document.getElementById("thumbs");
+        thumbsBlock.innerHTML = "";
+
+        photos.forEach(function(photo, index) {
+            const img = document.createElement("img");
+            img.src = photo.src;
+            img.alt = photo.name;
+
+            img.onclick = function() {
+                showPhoto(index);
+            };
+
+            thumbsBlock.appendChild(img);
+        });
+    }
+
+    function showPhoto(index) {
+        currentPhoto = index;
+
+        const mainPhoto = document.getElementById("mainPhoto");
+        const counter = document.getElementById("counter");
+        const photoName = document.getElementById("photoName");
+        const thumbs = document.querySelectorAll(".thumbs img");
+
+        mainPhoto.src = photos[currentPhoto].src;
+        photoName.textContent = photos[currentPhoto].name;
+        counter.textContent = (currentPhoto + 1) + " / " + photos.length;
+
+        thumbs.forEach(function(thumb) {
+            thumb.classList.remove("active");
+        });
+
+        thumbs[currentPhoto].classList.add("active");
+    }
+
+    function nextPhoto() {
+        currentPhoto++;
+
+        if (currentPhoto >= photos.length) {
+            currentPhoto = 0;
+        }
+
+        showPhoto(currentPhoto);
+    }
+
+    function prevPhoto() {
+        currentPhoto--;
+
+        if (currentPhoto < 0) {
+            currentPhoto = photos.length - 1;
+        }
+
+        showPhoto(currentPhoto);
+    }
+
+    createThumbs();
+    showPhoto(0);
+</script>
+
+</body>
+</html>

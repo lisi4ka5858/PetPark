@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetPark</title>
+    <meta name="description" content="PetPark - парк предназначенный для развлечений домашних животных клиентов в городе Москва">
+    <meta name="keywords" content="PetPark, парк, развлечения, домашние животные, Москва">
+    <meta name="author" content="PetPark">
+    
+    <!-- ====== Open Graph (для соцсетей) ====== -->
+    <meta property="og:title" content="PetPark - парк развлечений для домашних животных">
+    <meta property="og:description" content="парк предназначенный для развлечений домашних животных клиентов в городе Москва">
+    <meta property="og:image" content="https://username.github.io/repo-name/image/Логотип/preview.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:url" content="https://username.github.io/repo-name/">
+    
+    <!-- ====== Twitter Card ====== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PetPark - парк развлечений для домашних животных">
+    <meta name="twitter:description" content="парк предназначенный для развлечений домашних животных клиентов в городе Москва">
+    <meta name="twitter:image" content="https://username.github.io/repo-name/image/Логотип/preview.jpg">
+    
+    <!-- ====== Favicon ====== -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/Логотип/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/Логотип/favicon-16.png">
+    <link rel="apple-touch-icon" href="image/Логотип/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="page">
+    <div class="container">
+
+   <!--ШАПКА САЙТА-->     
+        <header class="header">
+            <div class="logo">
+                <img src="image/Главная страница/Логотип.png" alt="Логотип" height="50px">
+            </div>
+
+            <nav class="nav main-nav">
+               <a class="hover-red" href="map.html">Карта парка</a>
+               <a class="hover-orange" href="gallery.html">Галерея</a>
+               <a class="hover-yellow" href="reviews.html">Отзывы</a>
+               <a class="hover-green" href="#footer">Контакты</a>
+            </nav>
+
+               <div class="phone hover-blue">☎ +7 (999) 123-45-67</div>
+        </header>
+
+<!--ГЛАВНЫЙ БАННЕР-->
+        <section class="hero">
+            <img src="image/Главная страница/Глав_фото.png" alt="Главное фото">
+
+            <div class="hero-text">
+                <h1>Мир весёлых<br>приключений<br>для ваших питомцев!</h1>
+                <p>Игры, отдых и забота в одном месте!</p>
+            </div>
+        </section>
+
+ <!--НАШИ ЗОНЫ-->       
+        <section class="zones-section" id="zones">
+            <h2 class="section-title">🐾 Наши зоны</h2>
+
+            <button class="zone-arrow zone-arrow-left" type="button" onclick="prevZone()">‹</button>
+
+            <div class="zones-slider" id="zonesSlider"></div>
+
+            <button class="zone-arrow zone-arrow-right" type="button" onclick="nextZone()">›</button>
+        </section>
+
+        <section class="middle-grid">
+            <div class="map-section card-block">
+                <div>
+                    <h2>🐾 Карта парка</h2>
+                    <p>Посмотрите схему парка и узнайте, где находится каждая зона</p>
+                    <a class="btn" href="map.html">Открыть карту</a>
+                </div>
+
+                <img src="image/Главная страница/карта парка_главная.jpg" alt="Карта парка">
+            </div>
+
+<!--ГАЛЕРЕЯ ГОСТЕЙ-->
+            <div class="gallery-section card-block">
+                <h2 class="gallery-title">🐾 Галерея наших гостей</h2>
+
+                <div class="gallery">
+                    <img src="image/Галерея наших гостей/Белый кролик.png" alt="Белый кролик">
+                    <img src="image/Галерея наших гостей/Доберман.png" alt="Доберман">
+                    <img src="image/Галерея наших гостей/Корги1.png" alt="Корги">
+                    <img src="image/Галерея наших гостей/Морская свинка.png" alt="Морская свинка">
+                    <img src="image/Галерея наших гостей/Попугайчики.png" alt="Попугайчики">
+                </div>
+
+                <div class="gallery-btn">
+                    <a class="btn" href="gallery.html">Смотреть все фото</a>
+                </div>
+            </div>
+        </section>
+
+<!--ЗАПИСЬ НА ПОСЕЩЕНИЕ В ПАРК-->
+        <section class="registration-row">
+
+            <div class="booking-card">
+                <h2>🐾Запись на посещение</h2>
+
+                <div class="booking-field">
+                    <label>Кличка питомца</label>
+                    <input id="bookingName" type="text" placeholder="Кличка">
+                </div>
+
+                <div class="booking-field">
+                    <label>Вид питомца</label>
+                    <input id="bookingType" type="text" placeholder="Собака, кошка">
+                </div>
+
+                <div class="booking-field">
+                    <label>Дата посещения</label>
+                    <input id="bookingDate" type="text" placeholder="дд.мм.гггг">
+                </div>
+
+                <div class="booking-field">
+                    <label>Телефон</label>
+                    <input id="bookingPhone" type="text" placeholder="+7(___)___-__-__">
+                </div>
+
+                <div class="booking-buttons">
+                    <button class="btn booking-btn" type="button" onclick="saveBooking()">Записаться</button>
+                    <button class="btn clear-btn" type="button" onclick="clearBooking()">Очистить</button>
+                </div>
+            </div>
+
+<!--ПЛАКАТ-->
+            <div class="welcome-card">
+                <img src="image/Запись на посящение/Запись на посящение.png" alt="Мы ждём вас">
+                <div class="welcome-text">
+                    <h2>Мы ждём вас<br>и ваших любимцев!</h2>
+                    <p>PetPark — место, где питомцы счастливы</p>
+                </div>
+            </div>
+        </section>
+
+<!--ОТЗЫВЫ ПОСЕТИТЕЛЕЙ-->
+        <section class="reviews-section card-block">
+            <h2 class="reviews-title">🐾 Отзывы посетителей</h2>
+
+            <div class="reviews">
+                <article class="review">
+                    <img src="image/Отзывы наших гостей/Мурка.png" alt="Мурка">
+
+                    <div>
+                        <h3>Мурка</h3>
+                        <div class="stars">★★★★★</div>
+                        <p>Очень понравилось! Кошачье королевство — просто рай для кошечек.</p>
+                    </div>
+                </article>
+
+                <article class="review">
+                    <img src="image/Отзывы наших гостей/Рекс.png" alt="Рекс">
+
+                    <div>
+                        <h3>Рекс</h3>
+                        <div class="stars">★★★★★</div>
+                        <p>Любим приходить на полосу припяствий! Можно побегать, попрыгать и найти новых друзей.</p>
+                    </div>
+                </article>
+
+                <article class="review">
+                    <img src="image/Отзывы наших гостей/Боня.png" alt="Боня">
+
+                    <div>
+                        <h3>Боня</h3>
+                        <div class="stars">★★★★★</div>
+                        <p>После прогулки всегда отдыхаем в зоне отдыха. Спасибо PetPark!</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="review-button">
+                <a class="btn" href="reviews.html">Оставить отзыв</a>
+            </div>
+        </section>
+
+<!--ПОДВАЛ-->
+        <footer class="footer" id="footer">
+            <div>
+                <p> <img src="image/Контакты/Адрес.png" alt="Адрес" height="15px"> г. Москва, ул. Лапкина, 10</p>
+                <p> <img src="image/Контакты/Номер.png" alt="Номер" height="15px"> +7 (999) 123-45-67</p>
+                <p> <img src="image/Контакты/Почта.png" alt="Почта" height="15px"> ✉ info@petpark.ru</p>
+            </div>
+
+            <div class="social">
+                <p>Мы в соцсетях</p>
+                <div class="social-icons">
+                    <span> <img src="image/Контакты/Вк.png" alt="Vk" height="25px"></span>
+                    <span> <img src="image/Контакты/Телеграм.png" alt="Telegram" height="25px"></span>
+                    <span> <img src="image/Контакты/Инстаграм.png" alt="Instagram" height="30px"></span>
+                </div>
+            </div>
+
+            <div class="work">
+                <p> <img src="image/Контакты/часики.png" alt="часики" height="20px"> Режим работы</p>
+                <p>Ежедневно</p>
+                <p>10:00 - 20:00</p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<!--JAVA SCRIPT-->
+<script>
+    function saveBooking() {
+        const name = document.getElementById('bookingName').value.trim();
+        const type = document.getElementById('bookingType').value.trim();
+        const date = document.getElementById('bookingDate').value.trim();
+        const phone = document.getElementById('bookingPhone').value.trim();
+
+        const button = document.querySelector('.booking-btn');
+
+        if (name === '' || type === '' || date === '' || phone === '') {
+            alert('Нужно заполнить все поля');
+            return;
+        }
+
+        button.textContent = '✓ Записано';
+        button.style.background = '#1fa832';
+    }
+
+    function clearBooking() {
+        document.getElementById('bookingName').value = '';
+        document.getElementById('bookingType').value = '';
+        document.getElementById('bookingDate').value = '';
+        document.getElementById('bookingPhone').value = '';
+
+        const button = document.querySelector('.booking-btn');
+        button.textContent = 'Записаться';
+        button.style.background = '#078b25';
+    }
+
+    const zones = [
+        {
+            title: "Кошачье королевство",
+            text: "Уютный мир для кошек с множеством мест для игр и отдыха",
+            img: "image/Главная страница/Кошачье королевство.png"
+        },
+        {
+            title: "Игровая площадка",
+            text: "Весёлые игры и развлечения для питомцев любого возраста",
+            img: "image/Главная страница/Игровая площадка.png"
+        },
+        {
+            title: "Зона отдыха",
+            text: "Спокойное место для отдыха после активных развлечений",
+            img: "image/Главная страница/Зона отдыха.png"
+        },
+        {
+            title: "Фотозона",
+            text: "Зона для создания тёплых воспоминаний в виде фотографий",
+            img: "image/Главная страница/Фото зона.png"
+        },
+        {
+            title: "PetSpa",
+            text: "Отличное место для ухода за питомцами после весёлых игр",
+            img: "image/Главная страница/Pet Spa.png"
+        },
+        {
+            title: "Полоса приключений",
+            text: "Место для активных собак: туннели, барьеры, горки и препятствия",
+            img: "image/Главная страница/Полоса приключений.png"
+        }
+    ];
+
+    let firstZone = 0;
+
+    function renderZones() {
+        const slider = document.getElementById("zonesSlider");
+
+        if (!slider) {
+            alert("Ошибка: не найден блок zonesSlider");
+            return;
+        }
+
+        slider.innerHTML = "";
+
+        for (let i = 0; i < 5; i++) {
+            const index = (firstZone + i) % zones.length;
+            const zone = zones[index];
+
+            slider.innerHTML += `
+                <article class="zone-card">
+                    <img src="${zone.img}" alt="${zone.title}">
+                    <h3>${zone.title}</h3>
+                    <p>${zone.text}</p>
+                </article>
+            `;
+        }
+    }
+
+    function nextZone() {
+        firstZone++;
+
+        if (firstZone >= zones.length) {
+            firstZone = 0;
+        }
+
+        renderZones();
+    }
+
+    function prevZone() {
+        firstZone--;
+
+        if (firstZone < 0) {
+            firstZone = zones.length - 1;
+        }
+
+        renderZones();
+    }
+
+    renderZones();
+</script>
+
+</body>
+</html>
+ 

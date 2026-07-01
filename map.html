@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта парка</title>
+    <link rel="stylesheet" href="css/map.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+<!--ШАПКА САЙТА-->
+    <header class="header">
+        <div class="logo">
+            <img src="image/Главная страница/Логотип.png" alt="Логотип" height="60px">
+        </div>
+
+        <nav class="nav map-nav">
+            <a class="hover-red" href="Index.html">Главная</a>
+            <a class="hover-orange" href="Index.html#zones">Зоны парка</a>
+            <a class="hover-yellow" href="gallery.html">Галерея</a>
+            <a class="hover-green" href="reviews.html">Отзывы</a>
+            <a class="hover-blue" href="#footer">Контакты</a>
+        </nav>
+
+        <div class="phone hover-purple">☎ +7 (999) 123-45-67</div>
+    </header>
+
+<!--КАРТА ПАРКА-->
+        <h1 class="title">🐾 Карта парка 🐾</h1>
+        <p class="subtitle">Нажмите на любую зону, чтобы узнать больше о ней</p>
+
+    <main class="main">
+
+            <section class="map-box">
+                <img src="image/Карта парков/карта парка.png" alt="Карта парка">
+            </section>
+
+        <aside class="side">
+
+
+<!--ВЫБОР ЗОНЫ-->
+            <section class="choose-card">
+                <h2>Выберите зону</h2>
+
+                <button class="zone-btn green" type="button" onclick="showZone('adventure')">Полоса приключений</button>
+                    <button class="zone-btn purple" type="button" onclick="showZone('cat')">Кошачье королевство</button>
+                    <button class="zone-btn blue" type="button" onclick="showZone('play')">Игровая площадка</button>
+                    <button class="zone-btn orange" type="button" onclick="showZone('rest')">Зона отдыха</button>
+                    <button class="zone-btn pink" type="button" onclick="showZone('photo')">Фотозона</button>
+                    <button class="zone-btn teal" type="button" onclick="showZone('spa')">Pet Spa</button>
+            </section>
+
+            <section class="info-card" id="infoCard">
+                <h2 id="zoneTitle">🐾 Полоса приключений 🐾</h2>
+
+                <p id="zoneDescription">
+                    Активная зона для собак с туннелями, горками, барьерами и весёлыми препятствиями.
+                </p>
+
+                <div class="zone-photos">
+                    <img id="photoOne" src="image/Наши зоны/Зона_полоса приключений.png" alt="Фото зоны">
+                    <img id="photoTwo" src="image/Главная страница/Полоса приключений.png" alt="Фото зоны">
+                </div>              
+
+<!--ПРАВИЛА ПОСЕЩЕНИЯ-->
+                <div class="rules-title">Правила посещения:</div>
+
+                <ul class="rules">
+                    <li>Бережно относиться к животным</li>
+                    <li>Не шуметь и не пугать питомцев</li>
+                    <li>Соблюдать чистоту</li>
+                    <li>Следовать указаниям персонала</li>
+                </ul>
+
+                <a class="back-btn" href="Index.html">Назад на главную</a>
+            </section>
+
+        </aside>
+
+    </main>
+
+<!---->
+    <section class="comfort-strip">
+        <div class="comfort-card">
+            <div class="comfort-icon">🧼</div>
+            <div>
+                <h3>Чистота</h3>
+                <p>Регулярная уборка всей территории парка</p>
+            </div>
+        </div>
+
+        <div class="comfort-card">
+            <div class="comfort-icon">🛡️</div>
+            <div>
+                <h3>Безопасность</h3>
+                <p>Безопасные ограждения и контроль зон</p>
+            </div>
+        </div>
+
+        <div class="comfort-card">
+            <div class="comfort-icon">💧</div>
+            <div>
+                <h3>Питьевые фонтаны</h3>
+                <p>Свежая вода доступна для питомцев</p>
+            </div>
+        </div>
+
+        <div class="comfort-card">
+            <div class="comfort-icon">🐾</div>
+            <div>
+                <h3>Комфорт для хозяев</h3>
+                <p>Зоны отдыха и места ожидания</p>
+            </div>
+        </div>
+    </section>
+
+ <!--ПОДВАЛ-->
+    <footer class="footer" id="footer">
+         <div>
+            <p> <img src="image/Контакты/Адрес.png" alt="Адрес" height="15px"> г. Москва, ул. Лапкина, 10</p>
+            <p> <img src="image/Контакты/Номер.png" alt="Номер" height="15px"> +7 (999) 123-45-67</p>
+            <p> <img src="image/Контакты/Почта.png" alt="Почта" height="15px"> ✉ info@petpark.ru</p>
+        </div>
+
+        <div class="social">
+            <p>Мы в соцсетях</p>
+            <div class="social-icons">
+                <span> <img src="image/Контакты/Вк.png" alt="Вк" height="25px"></span>
+                <span> <img src="image/Контакты/Телеграм.png" alt="Телеграм" height="25px"></span>
+                <span> <img src="image/Контакты/Инстаграм.png" alt="Инстаграм" height="30px"></span>
+            </div>
+        </div>
+
+        <div class="work">
+            <p> <img src="image/Контакты/часики.png" alt="часики" height="20px"> Режим работы</p>
+            <p>Ежедневно</p>
+            <p>10:00 - 20:00</p>
+        </div>
+    </footer>
+
+
+<!--JAVA SCRIPT-->
+<script>
+    function showZone(zone) {
+        const title = document.getElementById('zoneTitle');
+        const description = document.getElementById('zoneDescription');
+        const photoOne = document.getElementById('photoOne');
+        const photoTwo = document.getElementById('photoTwo');
+        const infoCard = document.getElementById('infoCard');
+
+        if (zone === 'adventure') {
+            title.textContent = '🐾 Полоса приключений 🐾';
+            description.textContent = 'Активная зона для собак с туннелями, горками, барьерами и весёлыми препятствиями.';
+            photoOne.src = 'image/Наши зоны/Зона_полоса приключений.png';
+            photoTwo.src = 'image/Главная страница/Полоса приключений.png';
+            infoCard.style.background = '#e3f5d8';
+        }
+
+        if (zone === 'cat') {
+            title.textContent = '🐾 Кошачье королевство 🐾';
+            description.textContent = 'Уютный мир для кошек с множеством мест для игр и отдыха.';
+            photoOne.src = 'image/Наши зоны/Зона_кошачье королевство.png';
+            photoTwo.src = 'image/Главная страница/Кошачье королевство.png';
+            infoCard.style.background = '#f4dff0';
+        }
+
+        if (zone === 'play') {
+            title.textContent = '🐾 Игровая площадка 🐾';
+            description.textContent = 'Весёлые игры и развлечения для питомцев любого возраста.';
+            photoOne.src = 'image/Наши зоны/Зона_игровая площадка.png';
+            photoTwo.src = 'image/Главная страница/Игровая площадка.png';
+            infoCard.style.background = '#dfefff';
+        }
+
+        if (zone === 'rest') {
+            title.textContent = '🐾 Зона отдыха 🐾';
+            description.textContent = 'Спокойное место для отдыха после активных развлечений.';
+            photoOne.src = 'image/Наши зоны/Зона_зона отдыха.png';
+            photoTwo.src = 'image/Главная страница/Зона отдыха.png';
+            infoCard.style.background = '#fff0d7';
+        }
+
+        if (zone === 'photo') {
+            title.textContent = '🐾 Фотозона 🐾';
+            description.textContent = 'Яркая зона для красивых фотографий и тёплых воспоминаний.';
+            photoOne.src = 'image/Наши зоны/Зона_фотозона.png';
+            photoTwo.src = 'image/Главная страница/Фото зона2.png';
+            infoCard.style.background = '#ffe0ef';
+        }
+
+        if (zone === 'spa') {
+            title.textContent = '🐾 Pet Spa 🐾';
+            description.textContent = 'Место для ухода за питомцами: купание, расчёсывание и отдых.';
+            photoOne.src = 'image/Наши зоны/Зона_Pet Spa.png';
+            photoTwo.src = 'image/Главная страница/Pet Spa2.png';
+            infoCard.style.background = '#ddfff5';
+        }
+    }
+</script>
+
+</body>
+</html>
